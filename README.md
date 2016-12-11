@@ -1,4 +1,4 @@
-# Fraction Painter
+# Pendulum Simulation
 
 This is a little web project with Javascript and D3.js. It simulations two pendulums one swinging horizontally and the other one swings vertical.
 
