@@ -135,7 +135,7 @@ function controller(){
   string2.attr("y2", peny);
   sphere2.attr("cx", penx);
   sphere2.attr("cy", peny);
-  $('#speedPen2').html(`Speed: ${parseFloat(Math.round(Math.abs(vel/dx*3)*radius)).toFixed(2)/meters} m/s^2`);
+  $('#speedPen2').html(`Speed: ${parseFloat(Math.round(Math.abs(vel/dx*3)*radius)).toFixed(2)/meters} m/s`);
   $('#speedPen2x').html(`Speed (x-direction): ${parseFloat(Math.round(Math.abs(Math.sin(angle)*vel/dx*3)*radius)).toFixed(2)/meters} 0 m/s`);
   $('#speedPen2y').html(`Speed (y-direction): ${parseFloat(Math.round(Math.abs(Math.cos(angle)*vel/dx*3)*radius)).toFixed(2)/meters} 0 m/s`);
   $('#anglePen2').html(`Angle: ${parseFloat(Math.round(angle*180/Math.PI+90)).toFixed(2)} °`);
