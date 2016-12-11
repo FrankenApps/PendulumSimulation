@@ -1,0 +1,54 @@
+<!DOCTYPE HTML5 PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Elastischer Faden Physik Experiment</title>
+
+        <!-- jquery -->
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.1/bootstrap-slider.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.1/css/bootstrap-slider.min.css" />
+        <!-- JQuery UI -->
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <!-- D3.js -->
+        <script src="https://d3js.org/d3.v4.js"></script>
+
+        <script src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+      <svg height="0" width="0" xmlns="http://www.w3.org/2000/svg" version="1.1"> <defs> <pattern id="diagonal-stripe-3" patternUnits="userSpaceOnUse" width="10" height="10"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScvPgogIDxwYXRoIGQ9J00tMSwxIGwyLC0yCiAgICAgICAgICAgTTAsMTAgbDEwLC0xMAogICAgICAgICAgIE05LDExIGwyLC0yJyBzdHJva2U9J2JsYWNrJyBzdHJva2Utd2lkdGg9JzMnLz4KPC9zdmc+" x="0" y="0" width="10" height="10"> </image> </pattern> </defs> </svg>
+      <div id="menuWrapper" class="menu">
+        <h4 style="display: inline">Vertical Pendulum:</h4><br />
+        <span id="speedPen2">Speed: 0 m/s</span><br />
+        <span id="anglePen2">Angle: 120°</span><br />
+        <span id="speedPen2x">Speed (x-direction): 0 m/s</span><br />
+        <span id="speedPen2y">Speed (y-direction): 0 m/s</span><br />
+        <label for="radiusInput">Spring length: </label><input title="The length of the spring." type="number" value="3.1" step=".1" id="radiusInput"/><span> m</span><br /><br />
+        <h4 style="display: inline">Horizontal Pendulum:</h4><br />
+        <span id="speedPen1">Speed: 0 m/s</span><br />
+        <label for="lengthInput">Spring length: </label><input title="The length of the spring." type="number" value="3.1" step=".1" id="lengthInput"/><span> m</span><br /><br />
+        <h4 style="display: inline">Environment:</h4><br />
+        <label for="gravity">Gravity: </label><input id="gravity" type="text" data-slider-min="0" data-slider-max="20" data-slider-step="0.01" data-slider-value="9.81"/>
+        <label for="gravity">Friction: </label><input id="friction" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="0.1" data-slider-value="0"/>
+        <label for="gravity">Time Factor: </label><input id="time" type="text" data-slider-min="-10" data-slider-max="10" data-slider-step="1" data-slider-value="1"/>
+      </div>
+      <div id="scale" class="scale">
+          <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <line x1="2.5%" x2="97.5%" y1="50%" y2="50%" stroke="black" stroke-width="4" />
+            <line x1="2.5%" x2="2.5%" y1="33.3%" y2="66.6%" stroke="black" stroke-width="4" />
+            <line x1="97.5%" x2="97.5%" y1="33.3%" y2="66.6%" stroke="black" stroke-width="4" />
+            <text x="50%" y="85%" font-family="sans-serif" font-size="100%" text-anchor="middle" fill="black" font-weight="bold">1 m</text>
+          </svg>
+      </div>
+    </body>
+</html>
