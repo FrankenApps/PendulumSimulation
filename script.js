@@ -14,7 +14,7 @@ var angle = 0.9*Math.PI; // radians
 var vel = 0; // m/s
 var dx = 0.02; // s
 var acc, vel, penx, peny;
-
+var oldTime = 0;
 
 //pendulum vertical
 var lengthPen1 = 3.1; //m
@@ -124,7 +124,7 @@ function controller(){
   string.attr('width', Math.sin((start-(new Date()).getTime()/(400*speed))-Math.PI)*3+6);
   string.attr('x', Math.sin((start-(new Date()).getTime()/(400*speed)))*1.5-3+stepLR);
   $('#speedPen1').html(`Speed: ${parseFloat(Math.round(Math.abs(Math.sin(start-(new Date()).getTime()/(200*speed)-(Math.PI/2))*(lengthPen1*meters)+(lengthPen1*meters)))/meters).toFixed(2)} m/s`)
-
+  $('#frequency1').html(`Frequency: ${(1/(2*Math.PI/((400*speed)))).toFixed(5)} Hz`);
   //vertical pendulum
   acc = gravity*meters * Math.cos(angle) * dx;
 	vel += acc * dx;
@@ -135,6 +135,7 @@ function controller(){
   string2.attr("y2", peny);
   sphere2.attr("cx", penx);
   sphere2.attr("cy", peny);
+  $('#frequency').html(`Frequency: ${(1/(2*Math.PI*Math.sqrt(radius/9.81*meters))).toFixed(5)} Hz`);
   $('#speedPen2').html(`Speed: ${parseFloat(Math.round(Math.abs(vel/dx*3)*radius)).toFixed(2)/meters} m/s`);
   $('#speedPen2x').html(`Speed (x-direction): ${parseFloat(Math.round(Math.abs(Math.sin(angle)*vel/dx*3)*radius)).toFixed(2)/meters} 0 m/s`);
   $('#speedPen2y').html(`Speed (y-direction): ${parseFloat(Math.round(Math.abs(Math.cos(angle)*vel/dx*3)*radius)).toFixed(2)/meters} 0 m/s`);
